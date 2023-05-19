@@ -203,7 +203,7 @@ namespace App_Busca_CEP_Desktop
 
                 Ocultar_Submenus();
 
-                //Associar_Panel_Form_Externo();
+                Associar_Panel_Form_Externo(new form_cidades_por_estado());
 
             }
 
@@ -224,7 +224,7 @@ namespace App_Busca_CEP_Desktop
 
                 Ocultar_Submenus();
 
-                //Associar_Panel_Form_Externo();
+                Associar_Panel_Form_Externo(new form_ceps_por_logradouro());
 
             }
 

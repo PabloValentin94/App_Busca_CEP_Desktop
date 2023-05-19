@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 using App_Busca_CEP_Desktop.Model;
 using App_Busca_CEP_Desktop.Service;
 
@@ -58,71 +59,105 @@ namespace App_Busca_CEP_Desktop.View.Modules
         private void Configuracao_DataGridView()
         {
 
-            dgv_bairros_cidade.ForeColor = Color.Black;
+            try
+            {
 
-            dgv_bairros_cidade.Columns.Clear();
+                dgv_bairros_cidade.ForeColor = Color.Black;
 
-            // Definição das colunas:
+                dgv_bairros_cidade.Columns.Clear();
 
-            dgv_bairros_cidade.Columns.Insert(0, new DataGridViewTextBoxColumn());
+                // Definição das colunas:
 
-            /*dgv_bairros_cidade.Columns.Insert(1, new DataGridViewTextBoxColumn());
+                dgv_bairros_cidade.Columns.Insert(0, new DataGridViewTextBoxColumn());
 
-            dgv_bairros_cidade.Columns.Insert(2, new DataGridViewTextBoxColumn());*/
+                /*dgv_bairros_cidade.Columns.Insert(1, new DataGridViewTextBoxColumn());
 
-            // Definindo os nomes das colunas:
+                dgv_bairros_cidade.Columns.Insert(2, new DataGridViewTextBoxColumn());*/
 
-            dgv_bairros_cidade.Columns[0].Name = "Bairro";
+                // Definindo os nomes das colunas:
 
-            /*dgv_bairros_cidade.Columns[1].Name = "Cidade";
+                dgv_bairros_cidade.Columns[0].Name = "Bairro";
 
-            dgv_bairros_cidade.Columns[2].Name = "Estado";*/
+                /*dgv_bairros_cidade.Columns[1].Name = "Cidade";
 
-            //dgv
+                dgv_bairros_cidade.Columns[2].Name = "Estado";*/
 
-            // Permissões do usuário:
+                // Permissões do usuário:
 
-            dgv_bairros_cidade.AllowUserToAddRows = false;
+                dgv_bairros_cidade.AllowUserToAddRows = false;
 
-            dgv_bairros_cidade.AllowUserToDeleteRows = false;
+                dgv_bairros_cidade.AllowUserToDeleteRows = false;
 
-            dgv_bairros_cidade.AllowUserToOrderColumns = true;
+                dgv_bairros_cidade.AllowUserToOrderColumns = true;
 
-            // Estrutura do DataGridView:
+                // Estrutura do DataGridView:
 
-            dgv_bairros_cidade.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dgv_bairros_cidade.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-            dgv_bairros_cidade.ReadOnly = true;
+                dgv_bairros_cidade.ReadOnly = true;
+
+            }
+
+            catch(Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
 
         }
 
         private async void cbbox_estado_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            btn_buscar.Enabled = false;
+            try
+            {
 
-            btn_limpar.Enabled = false;
+                btn_buscar.Enabled = false;
 
-            List<Cidade> lista_cidades = await Data_Service.GetCidadesByUF(this.estados[cbbox_estado.SelectedIndex]);
+                btn_limpar.Enabled = false;
 
-            cbbox_cidade.DisplayMember = "descricao";
+                List<Cidade> lista_cidades = await Data_Service.GetCidadesByUF(this.estados[cbbox_estado.SelectedIndex]);
 
-            cbbox_cidade.ValueMember = "id_cidade";
+                cbbox_cidade.DisplayMember = "descricao";
 
-            cbbox_cidade.DataSource = lista_cidades;
+                cbbox_cidade.ValueMember = "id_cidade";
 
-            btn_buscar.Enabled = true;
+                cbbox_cidade.DataSource = lista_cidades;
+
+                btn_buscar.Enabled = true;
+
+            }
+
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
 
         }
 
         private void btn_fechar_Click(object sender, EventArgs e)
         {
 
-            if(MessageBox.Show("Deseja voltar à tela inicial?", "Atenção!",
-               MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            try
             {
 
-                this.Close();
+                if (MessageBox.Show("Deseja voltar à tela inicial?", "Atenção!",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+
+                    this.Close();
+
+                }
+
+            }
+
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -131,32 +166,56 @@ namespace App_Busca_CEP_Desktop.View.Modules
         private async void btn_buscar_Click(object sender, EventArgs e)
         {
 
-            dgv_bairros_cidade.Rows.Clear();
-
-            //string cidade = cbbox_cidade.SelectedText, estado = cbbox_estado.SelectedText;
-
-            List<Bairro> lista_bairros = await Data_Service.GetBairrosByIDCidade((int)cbbox_cidade.SelectedValue);
-
-            for (int i = 0; i < lista_bairros.Count - 1; i++)
+            try
             {
 
-                dgv_bairros_cidade.Rows.Add(lista_bairros[i].descricao_bairro/*, cidade, estado*/);
+                dgv_bairros_cidade.Rows.Clear();
+
+                //string cidade = cbbox_cidade.SelectedText, estado = cbbox_estado.SelectedText;
+
+                List<Bairro> lista_bairros = await Data_Service.GetBairrosByIDCidade((int)cbbox_cidade.SelectedValue);
+
+                for (int i = 0; i < lista_bairros.Count; i++)
+                {
+
+                    dgv_bairros_cidade.Rows.Add(lista_bairros[i].descricao_bairro/*, cidade, estado*/);
+
+                }
+
+                btn_limpar.Enabled = true;
 
             }
 
-            btn_limpar.Enabled = true;
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
 
         }
 
         private void btn_limpar_Click(object sender, EventArgs e)
         {
 
-            if(dgv_bairros_cidade.Rows.Count > 0)
+            try
             {
 
-                dgv_bairros_cidade.Rows.Clear();
+                if (dgv_bairros_cidade.Rows.Count > 0)
+                {
+
+                    dgv_bairros_cidade.Rows.Clear();
+
+                }
 
                 btn_limpar.Enabled = false;
+
+            }
+
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 

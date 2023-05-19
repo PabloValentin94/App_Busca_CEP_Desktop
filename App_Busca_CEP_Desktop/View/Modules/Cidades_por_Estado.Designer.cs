@@ -28,48 +28,53 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_limpar = new System.Windows.Forms.Button();
-            this.btn_buscar = new System.Windows.Forms.Button();
-            this.btn_fechar = new System.Windows.Forms.Button();
-            this.dgv_cidades_estado = new System.Windows.Forms.DataGridView();
-            this.cbbox_estado = new System.Windows.Forms.ComboBox();
             this.lbl_estado = new System.Windows.Forms.Label();
+            this.cbbox_estado = new System.Windows.Forms.ComboBox();
+            this.dgv_cidades_estado = new System.Windows.Forms.DataGridView();
+            this.btn_fechar = new System.Windows.Forms.Button();
+            this.btn_buscar = new System.Windows.Forms.Button();
+            this.btn_limpar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cidades_estado)).BeginInit();
             this.SuspendLayout();
             // 
-            // btn_limpar
+            // lbl_estado
             // 
-            this.btn_limpar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_limpar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_limpar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btn_limpar.FlatAppearance.BorderSize = 2;
-            this.btn_limpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_limpar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_limpar.ForeColor = System.Drawing.Color.White;
-            this.btn_limpar.Location = new System.Drawing.Point(427, 475);
-            this.btn_limpar.Name = "btn_limpar";
-            this.btn_limpar.Size = new System.Drawing.Size(100, 35);
-            this.btn_limpar.TabIndex = 17;
-            this.btn_limpar.Text = "Limpar";
-            this.btn_limpar.UseVisualStyleBackColor = true;
-            this.btn_limpar.Click += new System.EventHandler(this.btn_limpar_Click);
+            this.lbl_estado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbl_estado.AutoSize = true;
+            this.lbl_estado.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_estado.ForeColor = System.Drawing.Color.White;
+            this.lbl_estado.Location = new System.Drawing.Point(12, 12);
+            this.lbl_estado.Name = "lbl_estado";
+            this.lbl_estado.Size = new System.Drawing.Size(254, 32);
+            this.lbl_estado.TabIndex = 10;
+            this.lbl_estado.Text = "Escolha um estado:";
             // 
-            // btn_buscar
+            // cbbox_estado
             // 
-            this.btn_buscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_buscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_buscar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btn_buscar.FlatAppearance.BorderSize = 2;
-            this.btn_buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_buscar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_buscar.ForeColor = System.Drawing.Color.White;
-            this.btn_buscar.Location = new System.Drawing.Point(533, 475);
-            this.btn_buscar.Name = "btn_buscar";
-            this.btn_buscar.Size = new System.Drawing.Size(100, 35);
-            this.btn_buscar.TabIndex = 16;
-            this.btn_buscar.Text = "Buscar";
-            this.btn_buscar.UseVisualStyleBackColor = true;
-            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
+            this.cbbox_estado.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbbox_estado.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbbox_estado.FormattingEnabled = true;
+            this.cbbox_estado.Location = new System.Drawing.Point(272, 12);
+            this.cbbox_estado.Name = "cbbox_estado";
+            this.cbbox_estado.Size = new System.Drawing.Size(361, 32);
+            this.cbbox_estado.TabIndex = 11;
+            // 
+            // dgv_cidades_estado
+            // 
+            this.dgv_cidades_estado.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_cidades_estado.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgv_cidades_estado.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_cidades_estado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_cidades_estado.Location = new System.Drawing.Point(12, 62);
+            this.dgv_cidades_estado.Name = "dgv_cidades_estado";
+            this.dgv_cidades_estado.RowTemplate.Height = 25;
+            this.dgv_cidades_estado.Size = new System.Drawing.Size(621, 395);
+            this.dgv_cidades_estado.TabIndex = 12;
             // 
             // btn_fechar
             // 
@@ -88,44 +93,39 @@
             this.btn_fechar.UseVisualStyleBackColor = true;
             this.btn_fechar.Click += new System.EventHandler(this.btn_fechar_Click);
             // 
-            // dgv_cidades_estado
+            // btn_buscar
             // 
-            this.dgv_cidades_estado.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgv_cidades_estado.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgv_cidades_estado.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgv_cidades_estado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_cidades_estado.Location = new System.Drawing.Point(12, 63);
-            this.dgv_cidades_estado.Name = "dgv_cidades_estado";
-            this.dgv_cidades_estado.RowTemplate.Height = 25;
-            this.dgv_cidades_estado.Size = new System.Drawing.Size(621, 395);
-            this.dgv_cidades_estado.TabIndex = 12;
+            this.btn_buscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_buscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_buscar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_buscar.FlatAppearance.BorderSize = 2;
+            this.btn_buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_buscar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_buscar.ForeColor = System.Drawing.Color.White;
+            this.btn_buscar.Location = new System.Drawing.Point(533, 475);
+            this.btn_buscar.Name = "btn_buscar";
+            this.btn_buscar.Size = new System.Drawing.Size(100, 35);
+            this.btn_buscar.TabIndex = 16;
+            this.btn_buscar.Text = "Buscar";
+            this.btn_buscar.UseVisualStyleBackColor = true;
+            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
             // 
-            // cbbox_estado
+            // btn_limpar
             // 
-            this.cbbox_estado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbbox_estado.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbbox_estado.FormattingEnabled = true;
-            this.cbbox_estado.Location = new System.Drawing.Point(272, 12);
-            this.cbbox_estado.Name = "cbbox_estado";
-            this.cbbox_estado.Size = new System.Drawing.Size(361, 32);
-            this.cbbox_estado.TabIndex = 11;
-            // 
-            // lbl_estado
-            // 
-            this.lbl_estado.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_estado.AutoSize = true;
-            this.lbl_estado.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_estado.ForeColor = System.Drawing.Color.White;
-            this.lbl_estado.Location = new System.Drawing.Point(12, 12);
-            this.lbl_estado.Name = "lbl_estado";
-            this.lbl_estado.Size = new System.Drawing.Size(254, 32);
-            this.lbl_estado.TabIndex = 10;
-            this.lbl_estado.Text = "Escolha um estado:";
+            this.btn_limpar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_limpar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_limpar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_limpar.FlatAppearance.BorderSize = 2;
+            this.btn_limpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_limpar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_limpar.ForeColor = System.Drawing.Color.White;
+            this.btn_limpar.Location = new System.Drawing.Point(427, 475);
+            this.btn_limpar.Name = "btn_limpar";
+            this.btn_limpar.Size = new System.Drawing.Size(100, 35);
+            this.btn_limpar.TabIndex = 17;
+            this.btn_limpar.Text = "Limpar";
+            this.btn_limpar.UseVisualStyleBackColor = true;
+            this.btn_limpar.Click += new System.EventHandler(this.btn_limpar_Click);
             // 
             // form_cidades_por_estado
             // 
@@ -139,6 +139,7 @@
             this.Controls.Add(this.dgv_cidades_estado);
             this.Controls.Add(this.cbbox_estado);
             this.Controls.Add(this.lbl_estado);
+            this.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.MinimumSize = new System.Drawing.Size(661, 561);
             this.Name = "form_cidades_por_estado";
             this.Load += new System.EventHandler(this.form_cidades_por_estado_Load);
@@ -150,11 +151,11 @@
 
         #endregion
 
-        private Button btn_limpar;
-        private Button btn_buscar;
-        private Button btn_fechar;
-        private DataGridView dgv_cidades_estado;
-        private ComboBox cbbox_estado;
         private Label lbl_estado;
+        private ComboBox cbbox_estado;
+        private DataGridView dgv_cidades_estado;
+        private Button btn_fechar;
+        private Button btn_buscar;
+        private Button btn_limpar;
     }
 }

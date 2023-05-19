@@ -8,7 +8,7 @@ using System.Net.Http; // Métodos HTTP.
 
 using App_Busca_CEP_Desktop.Model;
 
-using Newtonsoft.Json; // Obtenção e Conversão de JSONs.
+using Newtonsoft.Json; // Manipulação e Conversão de JSONs.
 
 namespace App_Busca_CEP_Desktop.Service
 {
@@ -82,7 +82,7 @@ namespace App_Busca_CEP_Desktop.Service
 
         }
 
-        public static async Task<List<Cep>> GetCepByLogradouro(string logradouro)
+        public static async Task<List<Cep>> GetCepsByLogradouro(string logradouro)
         {
 
             List<Cep> lista_ceps = new List<Cep>();

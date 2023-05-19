@@ -57,7 +57,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(223, 561);
+            this.panel1.Size = new System.Drawing.Size(223, 584);
             this.panel1.TabIndex = 0;
             // 
             // pn_menu_lateral
@@ -71,7 +71,7 @@
             this.pn_menu_lateral.ForeColor = System.Drawing.Color.White;
             this.pn_menu_lateral.Location = new System.Drawing.Point(0, 126);
             this.pn_menu_lateral.Name = "pn_menu_lateral";
-            this.pn_menu_lateral.Size = new System.Drawing.Size(223, 435);
+            this.pn_menu_lateral.Size = new System.Drawing.Size(223, 458);
             this.pn_menu_lateral.TabIndex = 1;
             // 
             // btn_sair
@@ -264,14 +264,14 @@
             this.pn_form_externo.ForeColor = System.Drawing.Color.White;
             this.pn_form_externo.Location = new System.Drawing.Point(223, 0);
             this.pn_form_externo.Name = "pn_form_externo";
-            this.pn_form_externo.Size = new System.Drawing.Size(661, 561);
+            this.pn_form_externo.Size = new System.Drawing.Size(661, 584);
             this.pn_form_externo.TabIndex = 0;
             // 
             // form_principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 561);
+            this.ClientSize = new System.Drawing.Size(884, 584);
             this.ControlBox = false;
             this.Controls.Add(this.pn_form_externo);
             this.Controls.Add(this.panel1);

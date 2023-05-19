@@ -41,9 +41,6 @@
             // 
             // lbl_estado
             // 
-            this.lbl_estado.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_estado.AutoSize = true;
             this.lbl_estado.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_estado.Location = new System.Drawing.Point(12, 12);
@@ -91,9 +88,6 @@
             // 
             // lbl_cidade
             // 
-            this.lbl_cidade.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_cidade.AutoSize = true;
             this.lbl_cidade.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_cidade.Location = new System.Drawing.Point(12, 60);

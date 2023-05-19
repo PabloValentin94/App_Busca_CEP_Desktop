@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using App_Busca_CEP_Desktop.Model;
+using App_Busca_CEP_Desktop.Service;
+
 namespace App_Busca_CEP_Desktop.View.Modules
 {
 
@@ -36,6 +39,10 @@ namespace App_Busca_CEP_Desktop.View.Modules
 
                 Configuracao_DataGridView();
 
+                cbbox_estado.DataSource = this.estados;
+
+                btn_limpar.Enabled = false;
+
             }
 
             catch(Exception ex)
@@ -50,45 +57,127 @@ namespace App_Busca_CEP_Desktop.View.Modules
         private void Configuracao_DataGridView()
         {
 
-            dgv_cidades_estado.Columns.Clear();
+            try
+            {
 
-            // Definição das colunas:
+                dgv_cidades_estado.ForeColor = Color.Black;
+
+                dgv_cidades_estado.Columns.Clear();
+
+                // Definição das colunas:
+
+                dgv_cidades_estado.Columns.Insert(0, new DataGridViewTextBoxColumn());
+
+                // Definindo os nomes das colunas:
+
+                dgv_cidades_estado.Columns[0].Name = "Cidade";
+
+                // Permissões do usuário:
+
+                dgv_cidades_estado.AllowUserToAddRows = false;
+
+                dgv_cidades_estado.AllowUserToDeleteRows = false;
+
+                dgv_cidades_estado.AllowUserToOrderColumns = true;
+
+                // Estrutura do DataGridView:
+
+                dgv_cidades_estado.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+                dgv_cidades_estado.ReadOnly = true;
+
+            }
+
+            catch(Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
 
         }
 
         private void btn_fechar_Click(object sender, EventArgs e)
         {
 
-            if(MessageBox.Show("Deseja voltar à tela inicial?", "Atenção!",
-               MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            try
             {
 
-                this.Close();
+                if (MessageBox.Show("Deseja voltar à tela inicial?", "Atenção!",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+
+                    this.Close();
+
+                }
+
+            }
+
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
         }
 
-        private void btn_buscar_Click(object sender, EventArgs e)
+        private async void btn_buscar_Click(object sender, EventArgs e)
         {
 
-            dgv_cidades_estado.Rows.Clear();
+            try
+            {
+
+                dgv_cidades_estado.Rows.Clear();
+
+                List<Cidade> lista_cidades = await Data_Service.GetCidadesByUF(this.estados[cbbox_estado.SelectedIndex]);
+
+                for (int i = 0; i < lista_cidades.Count; i++)
+                {
+
+                    dgv_cidades_estado.Rows.Add(lista_cidades[i].descricao);
+
+                }
+
+                btn_limpar.Enabled = true;
+
+            }
+
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
 
         }
 
         private void btn_limpar_Click(object sender, EventArgs e)
         {
 
-            if(dgv_cidades_estado.Rows.Count > 0)
+            try
             {
 
-                dgv_cidades_estado.Rows.Clear();
+                if (dgv_cidades_estado.Rows.Count > 0)
+                {
+
+                    dgv_cidades_estado.Rows.Clear();
+
+                }
 
                 btn_limpar.Enabled = false;
 
             }
 
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
         }
+
     }
 
 }
