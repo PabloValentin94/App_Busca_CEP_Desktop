@@ -9,8 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="View\Assets\Images\" />
-    <Folder Include="View\Assets\Icon\" />
+    <Compile Remove="View\Assets\Icon\**" />
+    <EmbeddedResource Remove="View\Assets\Icon\**" />
+    <None Remove="View\Assets\Icon\**" />
   </ItemGroup>
 
   <ItemGroup>

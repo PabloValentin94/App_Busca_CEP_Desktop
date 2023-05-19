@@ -15,7 +15,7 @@ namespace App_Busca_CEP_Desktop
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            Application.Run(new frm_principal());
+            Application.Run(new form_principal());
 
         }
 
