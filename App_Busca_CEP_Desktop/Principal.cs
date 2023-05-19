@@ -156,7 +156,7 @@ namespace App_Busca_CEP_Desktop
             {
 
                 if (MessageBox.Show("Realmente deseja encerrar a aplicação?", "Atenção!",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
 
                     Application.Exit();

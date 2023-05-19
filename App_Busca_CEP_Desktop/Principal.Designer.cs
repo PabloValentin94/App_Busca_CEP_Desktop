@@ -41,14 +41,12 @@
             this.btn_opcoes = new System.Windows.Forms.Button();
             this.pn_logo = new System.Windows.Forms.Panel();
             this.pcbox_logo = new System.Windows.Forms.PictureBox();
-            this.pn_formulario = new System.Windows.Forms.Panel();
             this.pn_form_externo = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.pn_menu_lateral.SuspendLayout();
             this.pn_submenu_opcoes.SuspendLayout();
             this.pn_logo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbox_logo)).BeginInit();
-            this.pn_formulario.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -96,7 +94,7 @@
             // 
             // pn_submenu_opcoes
             // 
-            this.pn_submenu_opcoes.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.pn_submenu_opcoes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(54)))));
             this.pn_submenu_opcoes.Controls.Add(this.btn_form_logradouros_por_bairro);
             this.pn_submenu_opcoes.Controls.Add(this.btn_form_bairros_por_cidade);
             this.pn_submenu_opcoes.Controls.Add(this.btn_form_ceps_por_logradouro);
@@ -110,10 +108,12 @@
             // 
             // btn_form_logradouros_por_bairro
             // 
-            this.btn_form_logradouros_por_bairro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(54)))));
+            this.btn_form_logradouros_por_bairro.BackColor = System.Drawing.Color.Transparent;
             this.btn_form_logradouros_por_bairro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_form_logradouros_por_bairro.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_form_logradouros_por_bairro.FlatAppearance.BorderSize = 0;
+            this.btn_form_logradouros_por_bairro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btn_form_logradouros_por_bairro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.btn_form_logradouros_por_bairro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_form_logradouros_por_bairro.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_form_logradouros_por_bairro.ForeColor = System.Drawing.Color.Red;
@@ -130,10 +130,12 @@
             // 
             // btn_form_bairros_por_cidade
             // 
-            this.btn_form_bairros_por_cidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(54)))));
+            this.btn_form_bairros_por_cidade.BackColor = System.Drawing.Color.Transparent;
             this.btn_form_bairros_por_cidade.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_form_bairros_por_cidade.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_form_bairros_por_cidade.FlatAppearance.BorderSize = 0;
+            this.btn_form_bairros_por_cidade.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btn_form_bairros_por_cidade.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.btn_form_bairros_por_cidade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_form_bairros_por_cidade.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_form_bairros_por_cidade.ForeColor = System.Drawing.Color.Red;
@@ -150,10 +152,12 @@
             // 
             // btn_form_ceps_por_logradouro
             // 
-            this.btn_form_ceps_por_logradouro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(54)))));
+            this.btn_form_ceps_por_logradouro.BackColor = System.Drawing.Color.Transparent;
             this.btn_form_ceps_por_logradouro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_form_ceps_por_logradouro.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_form_ceps_por_logradouro.FlatAppearance.BorderSize = 0;
+            this.btn_form_ceps_por_logradouro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btn_form_ceps_por_logradouro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.btn_form_ceps_por_logradouro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_form_ceps_por_logradouro.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_form_ceps_por_logradouro.ForeColor = System.Drawing.Color.Red;
@@ -170,10 +174,12 @@
             // 
             // btn_form_cidades_por_estado
             // 
-            this.btn_form_cidades_por_estado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(54)))));
+            this.btn_form_cidades_por_estado.BackColor = System.Drawing.Color.Transparent;
             this.btn_form_cidades_por_estado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_form_cidades_por_estado.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_form_cidades_por_estado.FlatAppearance.BorderSize = 0;
+            this.btn_form_cidades_por_estado.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btn_form_cidades_por_estado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.btn_form_cidades_por_estado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_form_cidades_por_estado.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_form_cidades_por_estado.ForeColor = System.Drawing.Color.Red;
@@ -190,10 +196,12 @@
             // 
             // btn_form_endereco
             // 
-            this.btn_form_endereco.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(54)))));
+            this.btn_form_endereco.BackColor = System.Drawing.Color.Transparent;
             this.btn_form_endereco.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_form_endereco.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_form_endereco.FlatAppearance.BorderSize = 0;
+            this.btn_form_endereco.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btn_form_endereco.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.btn_form_endereco.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_form_endereco.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_form_endereco.ForeColor = System.Drawing.Color.Red;
@@ -249,21 +257,12 @@
             this.pcbox_logo.TabIndex = 0;
             this.pcbox_logo.TabStop = false;
             // 
-            // pn_formulario
-            // 
-            this.pn_formulario.BackColor = System.Drawing.Color.Gray;
-            this.pn_formulario.Controls.Add(this.pn_form_externo);
-            this.pn_formulario.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pn_formulario.Location = new System.Drawing.Point(223, 0);
-            this.pn_formulario.Name = "pn_formulario";
-            this.pn_formulario.Size = new System.Drawing.Size(661, 561);
-            this.pn_formulario.TabIndex = 1;
-            // 
             // pn_form_externo
             // 
-            this.pn_form_externo.BackColor = System.Drawing.Color.Transparent;
+            this.pn_form_externo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(54)))));
             this.pn_form_externo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pn_form_externo.Location = new System.Drawing.Point(0, 0);
+            this.pn_form_externo.ForeColor = System.Drawing.Color.White;
+            this.pn_form_externo.Location = new System.Drawing.Point(223, 0);
             this.pn_form_externo.Name = "pn_form_externo";
             this.pn_form_externo.Size = new System.Drawing.Size(661, 561);
             this.pn_form_externo.TabIndex = 0;
@@ -273,9 +272,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 561);
-            this.Controls.Add(this.pn_formulario);
+            this.ControlBox = false;
+            this.Controls.Add(this.pn_form_externo);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ForeColor = System.Drawing.Color.White;
             this.MinimumSize = new System.Drawing.Size(900, 600);
             this.Name = "form_principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -286,7 +287,6 @@
             this.pn_submenu_opcoes.ResumeLayout(false);
             this.pn_logo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pcbox_logo)).EndInit();
-            this.pn_formulario.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -296,16 +296,15 @@
         private Panel panel1;
         private Panel pn_menu_lateral;
         private Panel pn_logo;
-        private Panel pn_formulario;
         private PictureBox pcbox_logo;
         private Button btn_opcoes;
         private Panel pn_submenu_opcoes;
         private Button btn_sair;
-        private Panel pn_form_externo;
         private Button btn_form_logradouros_por_bairro;
         private Button btn_form_bairros_por_cidade;
         private Button btn_form_ceps_por_logradouro;
         private Button btn_form_cidades_por_estado;
         private Button btn_form_endereco;
+        private Panel pn_form_externo;
     }
 }
