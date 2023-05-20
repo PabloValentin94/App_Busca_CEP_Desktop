@@ -128,6 +128,8 @@ namespace App_Busca_CEP_Desktop.View.Modules
             try
             {
 
+                btn_buscar.Enabled = false;
+
                 dgv_cidades_estado.Rows.Clear();
 
                 List<Cidade> lista_cidades = await Data_Service.GetCidadesByUF(this.estados[cbbox_estado.SelectedIndex]);
@@ -135,9 +137,16 @@ namespace App_Busca_CEP_Desktop.View.Modules
                 for (int i = 0; i < lista_cidades.Count; i++)
                 {
 
-                    dgv_cidades_estado.Rows.Add(lista_cidades[i].descricao);
+                    if (lista_cidades[i].descricao != "")
+                    {
+
+                        dgv_cidades_estado.Rows.Add(lista_cidades[i].descricao);
+
+                    }
 
                 }
+
+                btn_buscar.Enabled = true;
 
                 btn_limpar.Enabled = true;
 

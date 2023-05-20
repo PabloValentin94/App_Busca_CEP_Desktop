@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_bairros_por_cidade));
             this.lbl_estado = new System.Windows.Forms.Label();
             this.cbbox_estado = new System.Windows.Forms.ComboBox();
             this.dgv_bairros_cidade = new System.Windows.Forms.DataGridView();
@@ -161,6 +162,7 @@
             this.Controls.Add(this.lbl_estado);
             this.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.Color.White;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(661, 561);
             this.Name = "form_bairros_por_cidade";
             this.Load += new System.EventHandler(this.form_bairros_por_cidade_Load);

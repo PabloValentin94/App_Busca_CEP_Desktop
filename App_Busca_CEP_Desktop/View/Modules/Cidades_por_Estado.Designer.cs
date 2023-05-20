@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_cidades_por_estado));
             this.lbl_estado = new System.Windows.Forms.Label();
             this.cbbox_estado = new System.Windows.Forms.ComboBox();
             this.dgv_cidades_estado = new System.Windows.Forms.DataGridView();
@@ -140,6 +141,8 @@
             this.Controls.Add(this.cbbox_estado);
             this.Controls.Add(this.lbl_estado);
             this.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ForeColor = System.Drawing.Color.White;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(661, 561);
             this.Name = "form_cidades_por_estado";
             this.Load += new System.EventHandler(this.form_cidades_por_estado_Load);

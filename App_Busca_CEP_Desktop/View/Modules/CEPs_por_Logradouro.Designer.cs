@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_ceps_por_logradouro));
             this.btn_limpar = new System.Windows.Forms.Button();
             this.btn_buscar = new System.Windows.Forms.Button();
             this.btn_fechar = new System.Windows.Forms.Button();
@@ -136,6 +137,8 @@
             this.Controls.Add(this.dgv_ceps_logradouro);
             this.Controls.Add(this.lbl_logradouro);
             this.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ForeColor = System.Drawing.Color.White;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(661, 561);
             this.Name = "form_ceps_por_logradouro";
             this.Text = "CEPs_por_Logradouro";

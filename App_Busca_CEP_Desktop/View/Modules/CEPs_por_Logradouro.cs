@@ -136,6 +136,8 @@ namespace App_Busca_CEP_Desktop.View.Modules
                 else
                 {
 
+                    btn_buscar.Enabled = false;
+
                     dgv_ceps_logradouro.Rows.Clear();
 
                     List<Cep> lista_ceps = await Data_Service.GetCepsByLogradouro(txt_logradouro.Text);
@@ -145,24 +147,31 @@ namespace App_Busca_CEP_Desktop.View.Modules
                     for (int i = 0; i < lista_ceps.Count; i++)
                     {
 
-                        string[] digitos_cep = new string[8];
-
-                        for (int j = 0; j <= 7; j++)
+                        if (lista_ceps[i].cep != "")
                         {
 
-                            digitos_cep[j] = lista_ceps[i].cep[j].ToString();
+                            string[] digitos_cep = new string[8];
+
+                            for (int j = 0; j <= 7; j++)
+                            {
+
+                                digitos_cep[j] = lista_ceps[i].cep[j].ToString();
+
+                            }
+
+                            string cep_formatado = digitos_cep[0] + digitos_cep[1] + "." +
+                                                   digitos_cep[2] + digitos_cep[3] + digitos_cep[4] +
+                                                   "-" + digitos_cep[5] + digitos_cep[6] + digitos_cep[7];
+
+                            dgv_ceps_logradouro.Rows.Add(cep_formatado);
+
+                            //indice++;
 
                         }
 
-                        string cep_formatado = digitos_cep[0] + digitos_cep[1] + "." +
-                                               digitos_cep[2] + digitos_cep[3] + digitos_cep[4] +
-                                               "-" + digitos_cep[5] + digitos_cep[6] + digitos_cep[7];
-
-                        dgv_ceps_logradouro.Rows.Add(cep_formatado);
-
-                        //indice++;
-
                     }
+
+                    btn_buscar.Enabled = true;
 
                     btn_limpar.Enabled = true;
 

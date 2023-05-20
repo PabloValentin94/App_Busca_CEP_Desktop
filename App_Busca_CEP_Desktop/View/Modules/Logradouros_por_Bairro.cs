@@ -14,7 +14,7 @@ using App_Busca_CEP_Desktop.Service;
 namespace App_Busca_CEP_Desktop.View.Modules
 {
 
-    public partial class form_bairros_por_cidade : Form
+    public partial class form_logradouros_por_bairro : Form
     {
 
         string[] estados = { "AC", "AL", "AM", "AP", "BA", "CE", "DF",
@@ -22,14 +22,14 @@ namespace App_Busca_CEP_Desktop.View.Modules
                              "PB", "PE", "PI", "PR", "RJ", "RN", "RO",
                              "RR", "RS", "SC", "SE", "SP", "TO"};
 
-        public form_bairros_por_cidade()
+        public form_logradouros_por_bairro()
         {
 
             InitializeComponent();
 
         }
 
-        private void form_bairros_por_cidade_Load(object sender, EventArgs e)
+        private void form_logradouros_por_bairro_Load(object sender, EventArgs e)
         {
 
             try
@@ -47,7 +47,7 @@ namespace App_Busca_CEP_Desktop.View.Modules
 
             }
 
-            catch (Exception ex)
+            catch(Exception ex)
             {
 
                 MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -62,39 +62,29 @@ namespace App_Busca_CEP_Desktop.View.Modules
             try
             {
 
-                dgv_bairros_cidade.ForeColor = Color.Black;
-
-                dgv_bairros_cidade.Columns.Clear();
+                dgv_logradouros_bairro.ForeColor = Color.Black;
 
                 // Definição das colunas:
 
-                dgv_bairros_cidade.Columns.Insert(0, new DataGridViewTextBoxColumn());
-
-                /*dgv_bairros_cidade.Columns.Insert(1, new DataGridViewTextBoxColumn());
-
-                dgv_bairros_cidade.Columns.Insert(2, new DataGridViewTextBoxColumn());*/
+                dgv_logradouros_bairro.Columns.Insert(0, new DataGridViewTextBoxColumn());
 
                 // Definindo os nomes das colunas:
 
-                dgv_bairros_cidade.Columns[0].Name = "Bairro";
-
-                /*dgv_bairros_cidade.Columns[1].Name = "Cidade";
-
-                dgv_bairros_cidade.Columns[2].Name = "Estado";*/
+                dgv_logradouros_bairro.Columns[0].Name = "Logradouro";
 
                 // Permissões do usuário:
 
-                dgv_bairros_cidade.AllowUserToAddRows = false;
+                dgv_logradouros_bairro.AllowUserToAddRows = false;
 
-                dgv_bairros_cidade.AllowUserToDeleteRows = false;
+                dgv_logradouros_bairro.AllowUserToDeleteRows = false;
 
-                dgv_bairros_cidade.AllowUserToOrderColumns = true;
+                dgv_logradouros_bairro.AllowUserToOrderColumns = true;
 
                 // Estrutura do DataGridView:
 
-                dgv_bairros_cidade.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dgv_logradouros_bairro.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-                dgv_bairros_cidade.ReadOnly = true;
+                dgv_logradouros_bairro.ReadOnly = true;
 
             }
 
@@ -126,6 +116,41 @@ namespace App_Busca_CEP_Desktop.View.Modules
                 cbbox_cidade.DataSource = lista_cidades;
 
                 btn_buscar.Enabled = true;
+
+                btn_limpar.Enabled = true;
+
+            }
+
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+        }
+
+        private async void cbbox_cidade_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            try
+            {
+
+                btn_buscar.Enabled = false;
+
+                btn_limpar.Enabled = false;
+
+                List<Bairro> lista_bairros = await Data_Service.GetBairrosByIDCidade((int) cbbox_cidade.SelectedValue);
+
+                cbbox_bairro.DisplayMember = "descricao_bairro";
+
+                cbbox_bairro.ValueMember = "descricao_bairro";
+
+                cbbox_bairro.DataSource = lista_bairros;
+
+                btn_buscar.Enabled = true;
+
+                btn_limpar.Enabled = true;
 
             }
 
@@ -171,19 +196,19 @@ namespace App_Busca_CEP_Desktop.View.Modules
 
                 btn_buscar.Enabled = false;
 
-                dgv_bairros_cidade.Rows.Clear();
+                dgv_logradouros_bairro.Rows.Clear();
 
-                //string cidade = cbbox_cidade.SelectedText, estado = cbbox_estado.SelectedText;
+                List<Logradouro> lista_logradouros =
+                await Data_Service.GetLogradourosByBairroAndIDCidade(
+                cbbox_bairro.SelectedValue.ToString(), (int) cbbox_cidade.SelectedValue);
 
-                List<Bairro> lista_bairros = await Data_Service.GetBairrosByIDCidade((int)cbbox_cidade.SelectedValue);
-
-                for (int i = 0; i < lista_bairros.Count; i++)
+                for (int i = 0; i < lista_logradouros.Count; i++)
                 {
 
-                    if (lista_bairros[i].descricao_bairro != "")
+                    if (lista_logradouros[i].descricao != "")
                     {
 
-                        dgv_bairros_cidade.Rows.Add(lista_bairros[i].descricao_bairro/*, cidade, estado*/);
+                        dgv_logradouros_bairro.Rows.Add(lista_logradouros[i].descricao);
 
                     }
 
@@ -210,10 +235,10 @@ namespace App_Busca_CEP_Desktop.View.Modules
             try
             {
 
-                if (dgv_bairros_cidade.Rows.Count > 0)
+                if (dgv_logradouros_bairro.Rows.Count > 0)
                 {
 
-                    dgv_bairros_cidade.Rows.Clear();
+                    dgv_logradouros_bairro.Rows.Clear();
 
                 }
 

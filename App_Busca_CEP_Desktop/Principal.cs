@@ -182,7 +182,7 @@ namespace App_Busca_CEP_Desktop
 
                 Ocultar_Submenus();
 
-                //Associar_Panel_Form_Externo();
+                Associar_Panel_Form_Externo(new form_endereco_pelo_cep());
 
             }
 
@@ -266,7 +266,7 @@ namespace App_Busca_CEP_Desktop
 
                 Ocultar_Submenus();
 
-                //Associar_Panel_Form_Externo();
+                Associar_Panel_Form_Externo(new form_logradouros_por_bairro());
 
             }
 
