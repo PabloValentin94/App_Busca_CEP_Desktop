@@ -40,15 +40,15 @@
             this.btn_form_endereco = new System.Windows.Forms.Button();
             this.btn_opcoes = new System.Windows.Forms.Button();
             this.pn_logo = new System.Windows.Forms.Panel();
-            this.pctbox_logo_menu_lateral = new System.Windows.Forms.PictureBox();
             this.pctbox_logo_centro = new System.Windows.Forms.PictureBox();
+            this.pctbox_logo_menu_lateral = new System.Windows.Forms.PictureBox();
             this.pn_form_externo = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.pn_menu_lateral.SuspendLayout();
             this.pn_submenu_opcoes.SuspendLayout();
             this.pn_logo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pctbox_logo_menu_lateral)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctbox_logo_centro)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctbox_logo_menu_lateral)).BeginInit();
             this.pn_form_externo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -241,41 +241,41 @@
             // pn_logo
             // 
             this.pn_logo.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.pn_logo.Controls.Add(this.pctbox_logo_menu_lateral);
+            this.pn_logo.Controls.Add(this.pctbox_logo_centro);
             this.pn_logo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pn_logo.Location = new System.Drawing.Point(0, 0);
             this.pn_logo.Name = "pn_logo";
             this.pn_logo.Size = new System.Drawing.Size(223, 126);
             this.pn_logo.TabIndex = 1;
             // 
-            // pctbox_logo_menu_lateral
-            // 
-            this.pctbox_logo_menu_lateral.BackColor = System.Drawing.Color.Transparent;
-            this.pctbox_logo_menu_lateral.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pctbox_logo_menu_lateral.Image = ((System.Drawing.Image)(resources.GetObject("pctbox_logo_menu_lateral.Image")));
-            this.pctbox_logo_menu_lateral.Location = new System.Drawing.Point(0, 0);
-            this.pctbox_logo_menu_lateral.Name = "pctbox_logo_menu_lateral";
-            this.pctbox_logo_menu_lateral.Size = new System.Drawing.Size(223, 126);
-            this.pctbox_logo_menu_lateral.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pctbox_logo_menu_lateral.TabIndex = 1;
-            this.pctbox_logo_menu_lateral.TabStop = false;
-            // 
             // pctbox_logo_centro
             // 
-            this.pctbox_logo_centro.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pctbox_logo_centro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pctbox_logo_centro.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pctbox_logo_centro.Image = ((System.Drawing.Image)(resources.GetObject("pctbox_logo_centro.Image")));
-            this.pctbox_logo_centro.Location = new System.Drawing.Point(223, 218);
+            this.pctbox_logo_centro.Location = new System.Drawing.Point(0, 0);
             this.pctbox_logo_centro.Name = "pctbox_logo_centro";
             this.pctbox_logo_centro.Size = new System.Drawing.Size(223, 126);
             this.pctbox_logo_centro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctbox_logo_centro.TabIndex = 0;
             this.pctbox_logo_centro.TabStop = false;
             // 
+            // pctbox_logo_menu_lateral
+            // 
+            this.pctbox_logo_menu_lateral.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pctbox_logo_menu_lateral.BackColor = System.Drawing.Color.White;
+            this.pctbox_logo_menu_lateral.Image = ((System.Drawing.Image)(resources.GetObject("pctbox_logo_menu_lateral.Image")));
+            this.pctbox_logo_menu_lateral.Location = new System.Drawing.Point(140, 178);
+            this.pctbox_logo_menu_lateral.Name = "pctbox_logo_menu_lateral";
+            this.pctbox_logo_menu_lateral.Size = new System.Drawing.Size(389, 207);
+            this.pctbox_logo_menu_lateral.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctbox_logo_menu_lateral.TabIndex = 1;
+            this.pctbox_logo_menu_lateral.TabStop = false;
+            // 
             // pn_form_externo
             // 
             this.pn_form_externo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(54)))));
-            this.pn_form_externo.Controls.Add(this.pctbox_logo_centro);
+            this.pn_form_externo.Controls.Add(this.pctbox_logo_menu_lateral);
             this.pn_form_externo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pn_form_externo.ForeColor = System.Drawing.Color.White;
             this.pn_form_externo.Location = new System.Drawing.Point(223, 0);
@@ -303,8 +303,8 @@
             this.pn_menu_lateral.ResumeLayout(false);
             this.pn_submenu_opcoes.ResumeLayout(false);
             this.pn_logo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pctbox_logo_menu_lateral)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctbox_logo_centro)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctbox_logo_menu_lateral)).EndInit();
             this.pn_form_externo.ResumeLayout(false);
             this.ResumeLayout(false);
 
