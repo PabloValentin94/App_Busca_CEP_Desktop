@@ -130,19 +130,27 @@ namespace App_Busca_CEP_Desktop.View.Modules
 
                 btn_buscar.Enabled = false;
 
-                Limpar_Textos();
-
                 msktxt_cep.Mask = "";
 
-                Endereco endereco = await Data_Service.GetEnderecoByCep(msktxt_cep.Text);
+                if (!String.IsNullOrEmpty(msktxt_cep.Text) && msktxt_cep.Text.Length == 8)
+                {
 
-                msktxt_cep.Mask = "##,###-###";
+                    Limpar_Textos();
 
-                Associar_Endereco_Campos(endereco);
+                    Endereco endereco = await Data_Service.GetEnderecoByCep(msktxt_cep.Text);
 
-                btn_limpar.Enabled = true;
+                    Associar_Endereco_Campos(endereco);
 
-                btn_buscar.Enabled = true;
+                }
+
+                else
+                {
+
+                    MessageBox.Show("Um CEP possui 8 dígitos! Preencha todos os campos " +
+                                    "corretamente antes de prosseguir.", "Atenção!",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                }
 
             }
 
@@ -150,6 +158,17 @@ namespace App_Busca_CEP_Desktop.View.Modules
             {
 
                 MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+            finally
+            {
+
+                msktxt_cep.Mask = "##,###-###";
+
+                btn_limpar.Enabled = true;
+
+                btn_buscar.Enabled = true;
 
             }
 

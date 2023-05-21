@@ -15,6 +15,10 @@ namespace App_Busca_CEP_Desktop
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
+
+            // Definindo a fonte, e também seu tamanho, padrão da aplicação.
+            Application.SetDefaultFont(new Font(new FontFamily("Arial"), 12f));
+
             Application.Run(new form_principal());
 
         }

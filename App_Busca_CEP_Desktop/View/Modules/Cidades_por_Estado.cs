@@ -43,6 +43,11 @@ namespace App_Busca_CEP_Desktop.View.Modules
 
                 btn_limpar.Enabled = false;
 
+                /* Impedindo que o usuário digite no ComboBox, podendo
+                 * apenas escolher as opções do seu respectivo menu de contexto. */
+
+                cbbox_estado.DropDownStyle = ComboBoxStyle.DropDownList;
+
             }
 
             catch(Exception ex)
@@ -130,25 +135,36 @@ namespace App_Busca_CEP_Desktop.View.Modules
 
                 btn_buscar.Enabled = false;
 
-                dgv_cidades_estado.Rows.Clear();
+                btn_limpar.Enabled = false;
 
-                List<Cidade> lista_cidades = await Data_Service.GetCidadesByUF(this.estados[cbbox_estado.SelectedIndex]);
-
-                for (int i = 0; i < lista_cidades.Count; i++)
+                if(!String.IsNullOrEmpty(cbbox_estado.Text))
                 {
 
-                    if (lista_cidades[i].descricao != "")
+                    dgv_cidades_estado.Rows.Clear();
+
+                    List<Cidade> lista_cidades = await Data_Service.GetCidadesByUF(this.estados[cbbox_estado.SelectedIndex]);
+
+                    for (int i = 0; i < lista_cidades.Count; i++)
                     {
 
-                        dgv_cidades_estado.Rows.Add(lista_cidades[i].descricao);
+                        if (lista_cidades[i].descricao != "")
+                        {
+
+                            dgv_cidades_estado.Rows.Add(lista_cidades[i].descricao);
+
+                        }
 
                     }
 
                 }
 
-                btn_buscar.Enabled = true;
+                else
+                {
 
-                btn_limpar.Enabled = true;
+                    MessageBox.Show("Preencha todos os campos corretamente antes de prosseguir.",
+                                    "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                }
 
             }
 
@@ -156,6 +172,15 @@ namespace App_Busca_CEP_Desktop.View.Modules
             {
 
                 MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+            finally
+            {
+
+                btn_buscar.Enabled = true;
+
+                btn_limpar.Enabled = true;
 
             }
 

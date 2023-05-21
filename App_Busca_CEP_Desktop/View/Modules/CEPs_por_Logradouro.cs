@@ -125,24 +125,28 @@ namespace App_Busca_CEP_Desktop.View.Modules
             try
             {
 
-                if(String.IsNullOrEmpty(txt_logradouro.Text))
+                btn_buscar.Enabled = false;
+
+                btn_buscar.Enabled = false;
+
+                if(!String.IsNullOrEmpty(txt_logradouro.Text))
                 {
 
-                    MessageBox.Show("Preencha o campo antes de prosseguir.", "Atenção!",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    /*// Prevenindo um possível erro.
 
-                }
+                    string upper = txt_logradouro.Text.ToUpper();
 
-                else
-                {
+                    string lower = txt_logradouro.Text.ToLower();
 
-                    btn_buscar.Enabled = false;
+                    string logradouro = upper[0] + lower.Substring(1);*/
 
                     dgv_ceps_logradouro.Rows.Clear();
 
                     List<Cep> lista_ceps = await Data_Service.GetCepsByLogradouro(txt_logradouro.Text);
 
                     //int indice = 1;
+
+                    //txt_logradouro.Text = logradouro;
 
                     for (int i = 0; i < lista_ceps.Count; i++)
                     {
@@ -171,9 +175,13 @@ namespace App_Busca_CEP_Desktop.View.Modules
 
                     }
 
-                    btn_buscar.Enabled = true;
+                }
 
-                    btn_limpar.Enabled = true;
+                else
+                {
+
+                    MessageBox.Show("Preencha todos os campos corretamente antes de prosseguir.",
+                                    "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 }
 
@@ -183,6 +191,15 @@ namespace App_Busca_CEP_Desktop.View.Modules
             {
 
                 MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+            finally
+            {
+
+                btn_buscar.Enabled = true;
+
+                btn_limpar.Enabled = true;
 
             }
 

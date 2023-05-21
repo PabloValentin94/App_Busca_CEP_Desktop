@@ -45,6 +45,13 @@ namespace App_Busca_CEP_Desktop.View.Modules
 
                 btn_limpar.Enabled = false;
 
+                /* Impedindo que o usuário digite nos ComboBoxes, podendo
+                 * apenas escolher as opções do seu respectivo menu de contexto. */
+
+                cbbox_estado.DropDownStyle = ComboBoxStyle.DropDownList;
+
+                cbbox_cidade.DropDownStyle = ComboBoxStyle.DropDownList;
+
             }
 
             catch (Exception ex)
@@ -102,6 +109,25 @@ namespace App_Busca_CEP_Desktop.View.Modules
             {
 
                 MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+        }
+
+        private bool Verificacao_Valor_Campo(string texto)
+        {
+
+            if(String.IsNullOrEmpty(texto))
+            {
+
+                return false;
+
+            }
+
+            else
+            {
+
+                return true;
 
             }
 
@@ -171,27 +197,38 @@ namespace App_Busca_CEP_Desktop.View.Modules
 
                 btn_buscar.Enabled = false;
 
-                dgv_bairros_cidade.Rows.Clear();
+                btn_limpar.Enabled = false;
 
-                //string cidade = cbbox_cidade.SelectedText, estado = cbbox_estado.SelectedText;
-
-                List<Bairro> lista_bairros = await Data_Service.GetBairrosByIDCidade((int)cbbox_cidade.SelectedValue);
-
-                for (int i = 0; i < lista_bairros.Count; i++)
+                if(Verificacao_Valor_Campo(cbbox_estado.Text) && Verificacao_Valor_Campo(cbbox_cidade.Text))
                 {
 
-                    if (lista_bairros[i].descricao_bairro != "")
+                    dgv_bairros_cidade.Rows.Clear();
+
+                    //string cidade = cbbox_cidade.SelectedText, estado = cbbox_estado.SelectedText;
+
+                    List<Bairro> lista_bairros = await Data_Service.GetBairrosByIDCidade((int)cbbox_cidade.SelectedValue);
+
+                    for (int i = 0; i < lista_bairros.Count; i++)
                     {
 
-                        dgv_bairros_cidade.Rows.Add(lista_bairros[i].descricao_bairro/*, cidade, estado*/);
+                        if (lista_bairros[i].descricao_bairro != "")
+                        {
+
+                            dgv_bairros_cidade.Rows.Add(lista_bairros[i].descricao_bairro/*, cidade, estado*/);
+
+                        }
 
                     }
 
                 }
 
-                btn_buscar.Enabled = true;
+                else
+                {
 
-                btn_limpar.Enabled = true;
+                    MessageBox.Show("Preencha todos os campos corretamente antes de prosseguir.",
+                                    "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                }
 
             }
 
@@ -199,6 +236,15 @@ namespace App_Busca_CEP_Desktop.View.Modules
             {
 
                 MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+            finally
+            {
+
+                btn_buscar.Enabled = true;
+
+                btn_limpar.Enabled = true;
 
             }
 

@@ -45,6 +45,15 @@ namespace App_Busca_CEP_Desktop.View.Modules
 
                 btn_limpar.Enabled = false;
 
+                /* Impedindo que o usuário digite nos ComboBoxes, podendo
+                 * apenas escolher as opções do seu respectivo menu de contexto. */
+
+                cbbox_estado.DropDownStyle = ComboBoxStyle.DropDownList;
+
+                cbbox_cidade.DropDownStyle = ComboBoxStyle.DropDownList;
+
+                cbbox_bairro.DropDownStyle = ComboBoxStyle.DropDownList;
+
             }
 
             catch(Exception ex)
@@ -92,6 +101,25 @@ namespace App_Busca_CEP_Desktop.View.Modules
             {
 
                 MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+        }
+
+        private bool Verificacao_Valor_Campo(string texto)
+        {
+
+            if (String.IsNullOrEmpty(texto))
+            {
+
+                return false;
+
+            }
+
+            else
+            {
+
+                return true;
 
             }
 
@@ -196,27 +224,40 @@ namespace App_Busca_CEP_Desktop.View.Modules
 
                 btn_buscar.Enabled = false;
 
-                dgv_logradouros_bairro.Rows.Clear();
+                btn_limpar.Enabled = false;
 
-                List<Logradouro> lista_logradouros =
-                await Data_Service.GetLogradourosByBairroAndIDCidade(
-                cbbox_bairro.SelectedValue.ToString(), (int) cbbox_cidade.SelectedValue);
-
-                for (int i = 0; i < lista_logradouros.Count; i++)
+                if(Verificacao_Valor_Campo(cbbox_estado.Text) &&
+                   Verificacao_Valor_Campo(cbbox_cidade.Text) &&
+                   Verificacao_Valor_Campo(cbbox_bairro.Text))
                 {
 
-                    if (lista_logradouros[i].descricao != "")
+                    dgv_logradouros_bairro.Rows.Clear();
+
+                    List<Logradouro> lista_logradouros =
+                    await Data_Service.GetLogradourosByBairroAndIDCidade(
+                    cbbox_bairro.Text, (int)cbbox_cidade.SelectedValue);
+
+                    for (int i = 0; i < lista_logradouros.Count; i++)
                     {
 
-                        dgv_logradouros_bairro.Rows.Add(lista_logradouros[i].descricao);
+                        if (lista_logradouros[i].descricao != "")
+                        {
+
+                            dgv_logradouros_bairro.Rows.Add(lista_logradouros[i].descricao);
+
+                        }
 
                     }
 
                 }
 
-                btn_buscar.Enabled = true;
+                else
+                {
 
-                btn_limpar.Enabled = true;
+                    MessageBox.Show("Preencha todos os campos corretamente antes de prosseguir.",
+                                    "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                }
 
             }
 
@@ -224,6 +265,15 @@ namespace App_Busca_CEP_Desktop.View.Modules
             {
 
                 MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+            finally
+            {
+
+                btn_buscar.Enabled = true;
+
+                btn_limpar.Enabled = true;
 
             }
 

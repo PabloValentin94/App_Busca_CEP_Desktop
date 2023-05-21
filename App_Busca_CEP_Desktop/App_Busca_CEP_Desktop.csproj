@@ -7,13 +7,8 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <ApplicationIcon>View\Assets\Favicon.ico</ApplicationIcon>
+    <Title>LocalizEtec</Title>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="View\Assets\Icon\**" />
-    <EmbeddedResource Remove="View\Assets\Icon\**" />
-    <None Remove="View\Assets\Icon\**" />
-  </ItemGroup>
 
   <ItemGroup>
     <Content Include="View\Assets\Favicon.ico" />
