@@ -264,10 +264,11 @@
             // 
             this.pctbox_logo_menu_lateral.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pctbox_logo_menu_lateral.BackColor = System.Drawing.Color.White;
+            this.pctbox_logo_menu_lateral.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pctbox_logo_menu_lateral.Image = ((System.Drawing.Image)(resources.GetObject("pctbox_logo_menu_lateral.Image")));
-            this.pctbox_logo_menu_lateral.Location = new System.Drawing.Point(140, 178);
+            this.pctbox_logo_menu_lateral.Location = new System.Drawing.Point(133, 176);
             this.pctbox_logo_menu_lateral.Name = "pctbox_logo_menu_lateral";
-            this.pctbox_logo_menu_lateral.Size = new System.Drawing.Size(389, 207);
+            this.pctbox_logo_menu_lateral.Size = new System.Drawing.Size(398, 225);
             this.pctbox_logo_menu_lateral.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctbox_logo_menu_lateral.TabIndex = 1;
             this.pctbox_logo_menu_lateral.TabStop = false;

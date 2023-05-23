@@ -109,7 +109,7 @@ namespace App_Busca_CEP_Desktop.View.Modules
         private bool Verificacao_Valor_Campo(string texto)
         {
 
-            if (String.IsNullOrEmpty(texto))
+            if(String.IsNullOrEmpty(texto))
             {
 
                 return false;
@@ -137,11 +137,25 @@ namespace App_Busca_CEP_Desktop.View.Modules
 
                 List<Cidade> lista_cidades = await Data_Service.GetCidadesByUF(this.estados[cbbox_estado.SelectedIndex]);
 
+                List<Cidade> lista_cidades_revisada = new List<Cidade>();
+
+                for(int i = 0; i < lista_cidades.Count; i++)
+                {
+
+                    if(!String.IsNullOrEmpty(lista_cidades[i].descricao))
+                    {
+
+                        lista_cidades_revisada.Add(lista_cidades[i]);
+
+                    }
+
+                }
+
                 cbbox_cidade.DisplayMember = "descricao";
 
                 cbbox_cidade.ValueMember = "id_cidade";
 
-                cbbox_cidade.DataSource = lista_cidades;
+                cbbox_cidade.DataSource = lista_cidades_revisada;
 
                 btn_buscar.Enabled = true;
 
@@ -149,7 +163,7 @@ namespace App_Busca_CEP_Desktop.View.Modules
 
             }
 
-            catch (Exception ex)
+            catch(Exception ex)
             {
 
                 MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -170,11 +184,25 @@ namespace App_Busca_CEP_Desktop.View.Modules
 
                 List<Bairro> lista_bairros = await Data_Service.GetBairrosByIDCidade((int) cbbox_cidade.SelectedValue);
 
+                List<Bairro> lista_bairros_revisada = new List<Bairro>();
+
+                for(int i = 0; i < lista_bairros.Count; i++)
+                {
+
+                    if(!String.IsNullOrEmpty(lista_bairros[i].descricao_bairro))
+                    {
+
+                        lista_bairros_revisada.Add(lista_bairros[i]);
+
+                    }
+
+                }
+
                 cbbox_bairro.DisplayMember = "descricao_bairro";
 
                 cbbox_bairro.ValueMember = "descricao_bairro";
 
-                cbbox_bairro.DataSource = lista_bairros;
+                cbbox_bairro.DataSource = lista_bairros_revisada;
 
                 btn_buscar.Enabled = true;
 
@@ -182,7 +210,7 @@ namespace App_Busca_CEP_Desktop.View.Modules
 
             }
 
-            catch (Exception ex)
+            catch(Exception ex)
             {
 
                 MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -197,7 +225,7 @@ namespace App_Busca_CEP_Desktop.View.Modules
             try
             {
 
-                if (MessageBox.Show("Deseja voltar à tela inicial?", "Atenção!",
+                if(MessageBox.Show("Deseja voltar à tela inicial?", "Atenção!",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
 
@@ -207,7 +235,7 @@ namespace App_Busca_CEP_Desktop.View.Modules
 
             }
 
-            catch (Exception ex)
+            catch(Exception ex)
             {
 
                 MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -237,15 +265,28 @@ namespace App_Busca_CEP_Desktop.View.Modules
                     await Data_Service.GetLogradourosByBairroAndIDCidade(
                     cbbox_bairro.Text, (int)cbbox_cidade.SelectedValue);
 
-                    for (int i = 0; i < lista_logradouros.Count; i++)
+                    if(lista_logradouros.Count > 0)
                     {
 
-                        if (lista_logradouros[i].descricao != "")
+                        for(int i = 0; i < lista_logradouros.Count; i++)
                         {
 
-                            dgv_logradouros_bairro.Rows.Add(lista_logradouros[i].descricao);
+                            if(lista_logradouros[i].descricao != "")
+                            {
+
+                                dgv_logradouros_bairro.Rows.Add(lista_logradouros[i].descricao);
+
+                            }
 
                         }
+
+                    }
+
+                    else
+                    {
+
+                        MessageBox.Show("Nenhum registro encontrado no sistema! Tente outro valor.",
+                                        "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     }
 
@@ -261,7 +302,7 @@ namespace App_Busca_CEP_Desktop.View.Modules
 
             }
 
-            catch (Exception ex)
+            catch(Exception ex)
             {
 
                 MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -285,7 +326,7 @@ namespace App_Busca_CEP_Desktop.View.Modules
             try
             {
 
-                if (dgv_logradouros_bairro.Rows.Count > 0)
+                if(dgv_logradouros_bairro.Rows.Count > 0)
                 {
 
                     dgv_logradouros_bairro.Rows.Clear();
@@ -296,7 +337,7 @@ namespace App_Busca_CEP_Desktop.View.Modules
 
             }
 
-            catch (Exception ex)
+            catch(Exception ex)
             {
 
                 MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);

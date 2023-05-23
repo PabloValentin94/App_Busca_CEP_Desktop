@@ -54,7 +54,7 @@ namespace App_Busca_CEP_Desktop.View.Modules
 
             }
 
-            catch (Exception ex)
+            catch(Exception ex)
             {
 
                 MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -145,17 +145,31 @@ namespace App_Busca_CEP_Desktop.View.Modules
 
                 List<Cidade> lista_cidades = await Data_Service.GetCidadesByUF(this.estados[cbbox_estado.SelectedIndex]);
 
+                List<Cidade> lista_cidades_revisada = new List<Cidade>();
+
+                for(int i = 0; i< lista_cidades.Count; i++)
+                {
+
+                    if(!String.IsNullOrEmpty(lista_cidades[i].descricao))
+                    {
+
+                        lista_cidades_revisada.Add(lista_cidades[i]);
+
+                    }
+
+                }
+
                 cbbox_cidade.DisplayMember = "descricao";
 
                 cbbox_cidade.ValueMember = "id_cidade";
 
-                cbbox_cidade.DataSource = lista_cidades;
+                cbbox_cidade.DataSource = lista_cidades_revisada;
 
                 btn_buscar.Enabled = true;
 
             }
 
-            catch (Exception ex)
+            catch(Exception ex)
             {
 
                 MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -170,7 +184,7 @@ namespace App_Busca_CEP_Desktop.View.Modules
             try
             {
 
-                if (MessageBox.Show("Deseja voltar à tela inicial?", "Atenção!",
+                if(MessageBox.Show("Deseja voltar à tela inicial?", "Atenção!",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
 
@@ -180,7 +194,7 @@ namespace App_Busca_CEP_Desktop.View.Modules
 
             }
 
-            catch (Exception ex)
+            catch(Exception ex)
             {
 
                 MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -208,15 +222,28 @@ namespace App_Busca_CEP_Desktop.View.Modules
 
                     List<Bairro> lista_bairros = await Data_Service.GetBairrosByIDCidade((int)cbbox_cidade.SelectedValue);
 
-                    for (int i = 0; i < lista_bairros.Count; i++)
+                    if(lista_bairros.Count > 0)
                     {
 
-                        if (lista_bairros[i].descricao_bairro != "")
+                        for(int i = 0; i < lista_bairros.Count; i++)
                         {
 
-                            dgv_bairros_cidade.Rows.Add(lista_bairros[i].descricao_bairro/*, cidade, estado*/);
+                            if(lista_bairros[i].descricao_bairro != "")
+                            {
+
+                                dgv_bairros_cidade.Rows.Add(lista_bairros[i].descricao_bairro/*, cidade, estado*/);
+
+                            }
 
                         }
+
+                    }
+
+                    else
+                    {
+
+                        MessageBox.Show("Nenhum registro encontrado no sistema! Tente outro valor.",
+                                        "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     }
 
@@ -232,7 +259,7 @@ namespace App_Busca_CEP_Desktop.View.Modules
 
             }
 
-            catch (Exception ex)
+            catch(Exception ex)
             {
 
                 MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -256,7 +283,7 @@ namespace App_Busca_CEP_Desktop.View.Modules
             try
             {
 
-                if (dgv_bairros_cidade.Rows.Count > 0)
+                if(dgv_bairros_cidade.Rows.Count > 0)
                 {
 
                     dgv_bairros_cidade.Rows.Clear();
@@ -267,7 +294,7 @@ namespace App_Busca_CEP_Desktop.View.Modules
 
             }
 
-            catch (Exception ex)
+            catch(Exception ex)
             {
 
                 MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);

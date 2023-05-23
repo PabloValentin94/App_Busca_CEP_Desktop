@@ -38,7 +38,7 @@ namespace App_Busca_CEP_Desktop.View.Modules
 
             }
 
-            catch (Exception ex)
+            catch(Exception ex)
             {
 
                 MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -85,7 +85,7 @@ namespace App_Busca_CEP_Desktop.View.Modules
 
             }
 
-            catch (Exception ex)
+            catch(Exception ex)
             {
 
                 MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -100,7 +100,7 @@ namespace App_Busca_CEP_Desktop.View.Modules
             try
             {
 
-                if (MessageBox.Show("Deseja voltar à tela inicial?", "Atenção!",
+                if(MessageBox.Show("Deseja voltar à tela inicial?", "Atenção!",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
 
@@ -110,7 +110,7 @@ namespace App_Busca_CEP_Desktop.View.Modules
 
             }
 
-            catch (Exception ex)
+            catch(Exception ex)
             {
 
                 MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -148,30 +148,43 @@ namespace App_Busca_CEP_Desktop.View.Modules
 
                     //txt_logradouro.Text = logradouro;
 
-                    for (int i = 0; i < lista_ceps.Count; i++)
+                    if(lista_ceps.Count > 0)
                     {
 
-                        if (lista_ceps[i].cep != "")
+                        for(int i = 0; i < lista_ceps.Count; i++)
                         {
 
-                            string[] digitos_cep = new string[8];
-
-                            for (int j = 0; j <= 7; j++)
+                            if(lista_ceps[i].cep != "")
                             {
 
-                                digitos_cep[j] = lista_ceps[i].cep[j].ToString();
+                                string[] digitos_cep = new string[8];
+
+                                for(int j = 0; j <= 7; j++)
+                                {
+
+                                    digitos_cep[j] = lista_ceps[i].cep[j].ToString();
+
+                                }
+
+                                string cep_formatado = digitos_cep[0] + digitos_cep[1] + "." +
+                                                       digitos_cep[2] + digitos_cep[3] + digitos_cep[4] +
+                                                       "-" + digitos_cep[5] + digitos_cep[6] + digitos_cep[7];
+
+                                dgv_ceps_logradouro.Rows.Add(cep_formatado);
+
+                                //indice++;
 
                             }
 
-                            string cep_formatado = digitos_cep[0] + digitos_cep[1] + "." +
-                                                   digitos_cep[2] + digitos_cep[3] + digitos_cep[4] +
-                                                   "-" + digitos_cep[5] + digitos_cep[6] + digitos_cep[7];
-
-                            dgv_ceps_logradouro.Rows.Add(cep_formatado);
-
-                            //indice++;
-
                         }
+
+                    }
+
+                    else
+                    {
+
+                        MessageBox.Show("Nenhum registro encontrado no sistema! Tente outro valor.",
+                                        "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     }
 
@@ -187,7 +200,7 @@ namespace App_Busca_CEP_Desktop.View.Modules
 
             }
 
-            catch (Exception ex)
+            catch(Exception ex)
             {
 
                 MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -213,7 +226,7 @@ namespace App_Busca_CEP_Desktop.View.Modules
 
                 txt_logradouro.Clear();
 
-                if (dgv_ceps_logradouro.Rows.Count > 0)
+                if(dgv_ceps_logradouro.Rows.Count > 0)
                 {
 
                     dgv_ceps_logradouro.Rows.Clear();

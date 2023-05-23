@@ -67,7 +67,7 @@ namespace App_Busca_CEP_Desktop.View.Modules
 
             }
 
-            catch (Exception ex)
+            catch(Exception ex)
             {
 
                 MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -103,7 +103,7 @@ namespace App_Busca_CEP_Desktop.View.Modules
             try
             {
 
-                if (MessageBox.Show("Deseja voltar à tela inicial?", "Atenção!",
+                if(MessageBox.Show("Deseja voltar à tela inicial?", "Atenção!",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
 
@@ -113,7 +113,7 @@ namespace App_Busca_CEP_Desktop.View.Modules
 
             }
 
-            catch (Exception ex)
+            catch(Exception ex)
             {
 
                 MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -132,7 +132,7 @@ namespace App_Busca_CEP_Desktop.View.Modules
 
                 msktxt_cep.Mask = "";
 
-                if (!String.IsNullOrEmpty(msktxt_cep.Text) && msktxt_cep.Text.Length == 8)
+                if(!String.IsNullOrEmpty(msktxt_cep.Text) && msktxt_cep.Text.Length == 8)
                 {
 
                     Limpar_Textos();
@@ -154,7 +154,7 @@ namespace App_Busca_CEP_Desktop.View.Modules
 
             }
 
-            catch (Exception ex)
+            catch(Exception ex)
             {
 
                 MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -188,7 +188,7 @@ namespace App_Busca_CEP_Desktop.View.Modules
 
             }
 
-            catch (Exception ex)
+            catch(Exception ex)
             {
 
                 MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);

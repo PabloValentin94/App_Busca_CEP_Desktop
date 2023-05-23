@@ -108,7 +108,7 @@ namespace App_Busca_CEP_Desktop.View.Modules
             try
             {
 
-                if (MessageBox.Show("Deseja voltar à tela inicial?", "Atenção!",
+                if(MessageBox.Show("Deseja voltar à tela inicial?", "Atenção!",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
 
@@ -118,7 +118,7 @@ namespace App_Busca_CEP_Desktop.View.Modules
 
             }
 
-            catch (Exception ex)
+            catch(Exception ex)
             {
 
                 MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -144,15 +144,28 @@ namespace App_Busca_CEP_Desktop.View.Modules
 
                     List<Cidade> lista_cidades = await Data_Service.GetCidadesByUF(this.estados[cbbox_estado.SelectedIndex]);
 
-                    for (int i = 0; i < lista_cidades.Count; i++)
+                    if(lista_cidades.Count > 0)
                     {
 
-                        if (lista_cidades[i].descricao != "")
+                        for(int i = 0; i < lista_cidades.Count; i++)
                         {
 
-                            dgv_cidades_estado.Rows.Add(lista_cidades[i].descricao);
+                            if(lista_cidades[i].descricao != "")
+                            {
+
+                                dgv_cidades_estado.Rows.Add(lista_cidades[i].descricao);
+
+                            }
 
                         }
+
+                    }
+
+                    else
+                    {
+
+                        MessageBox.Show("Nenhum registro encontrado no sistema! Tente outro valor.",
+                                        "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     }
 
@@ -168,7 +181,7 @@ namespace App_Busca_CEP_Desktop.View.Modules
 
             }
 
-            catch (Exception ex)
+            catch(Exception ex)
             {
 
                 MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -192,7 +205,7 @@ namespace App_Busca_CEP_Desktop.View.Modules
             try
             {
 
-                if (dgv_cidades_estado.Rows.Count > 0)
+                if(dgv_cidades_estado.Rows.Count > 0)
                 {
 
                     dgv_cidades_estado.Rows.Clear();
@@ -203,7 +216,7 @@ namespace App_Busca_CEP_Desktop.View.Modules
 
             }
 
-            catch (Exception ex)
+            catch(Exception ex)
             {
 
                 MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
