@@ -82,9 +82,10 @@
             this.btn_sair.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_sair.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btn_sair.FlatAppearance.BorderSize = 0;
+            this.btn_sair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btn_sair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_sair.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_sair.ForeColor = System.Drawing.Color.Red;
+            this.btn_sair.ForeColor = System.Drawing.Color.SteelBlue;
             this.btn_sair.Location = new System.Drawing.Point(0, 425);
             this.btn_sair.Name = "btn_sair";
             this.btn_sair.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -116,10 +117,10 @@
             this.btn_form_logradouros_por_bairro.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_form_logradouros_por_bairro.FlatAppearance.BorderSize = 0;
             this.btn_form_logradouros_por_bairro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btn_form_logradouros_por_bairro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btn_form_logradouros_por_bairro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.btn_form_logradouros_por_bairro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_form_logradouros_por_bairro.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_form_logradouros_por_bairro.ForeColor = System.Drawing.Color.Red;
+            this.btn_form_logradouros_por_bairro.ForeColor = System.Drawing.Color.SteelBlue;
             this.btn_form_logradouros_por_bairro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_form_logradouros_por_bairro.Location = new System.Drawing.Point(0, 300);
             this.btn_form_logradouros_por_bairro.Name = "btn_form_logradouros_por_bairro";
@@ -138,10 +139,10 @@
             this.btn_form_bairros_por_cidade.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_form_bairros_por_cidade.FlatAppearance.BorderSize = 0;
             this.btn_form_bairros_por_cidade.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btn_form_bairros_por_cidade.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btn_form_bairros_por_cidade.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.btn_form_bairros_por_cidade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_form_bairros_por_cidade.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_form_bairros_por_cidade.ForeColor = System.Drawing.Color.Red;
+            this.btn_form_bairros_por_cidade.ForeColor = System.Drawing.Color.SteelBlue;
             this.btn_form_bairros_por_cidade.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_form_bairros_por_cidade.Location = new System.Drawing.Point(0, 225);
             this.btn_form_bairros_por_cidade.Name = "btn_form_bairros_por_cidade";
@@ -160,10 +161,10 @@
             this.btn_form_ceps_por_logradouro.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_form_ceps_por_logradouro.FlatAppearance.BorderSize = 0;
             this.btn_form_ceps_por_logradouro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btn_form_ceps_por_logradouro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btn_form_ceps_por_logradouro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.btn_form_ceps_por_logradouro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_form_ceps_por_logradouro.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_form_ceps_por_logradouro.ForeColor = System.Drawing.Color.Red;
+            this.btn_form_ceps_por_logradouro.ForeColor = System.Drawing.Color.SteelBlue;
             this.btn_form_ceps_por_logradouro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_form_ceps_por_logradouro.Location = new System.Drawing.Point(0, 150);
             this.btn_form_ceps_por_logradouro.Name = "btn_form_ceps_por_logradouro";
@@ -182,10 +183,10 @@
             this.btn_form_cidades_por_estado.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_form_cidades_por_estado.FlatAppearance.BorderSize = 0;
             this.btn_form_cidades_por_estado.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btn_form_cidades_por_estado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btn_form_cidades_por_estado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.btn_form_cidades_por_estado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_form_cidades_por_estado.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_form_cidades_por_estado.ForeColor = System.Drawing.Color.Red;
+            this.btn_form_cidades_por_estado.ForeColor = System.Drawing.Color.SteelBlue;
             this.btn_form_cidades_por_estado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_form_cidades_por_estado.Location = new System.Drawing.Point(0, 75);
             this.btn_form_cidades_por_estado.Name = "btn_form_cidades_por_estado";
@@ -204,10 +205,10 @@
             this.btn_form_endereco.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_form_endereco.FlatAppearance.BorderSize = 0;
             this.btn_form_endereco.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btn_form_endereco.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btn_form_endereco.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.btn_form_endereco.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_form_endereco.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_form_endereco.ForeColor = System.Drawing.Color.Red;
+            this.btn_form_endereco.ForeColor = System.Drawing.Color.SteelBlue;
             this.btn_form_endereco.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_form_endereco.Location = new System.Drawing.Point(0, 0);
             this.btn_form_endereco.Name = "btn_form_endereco";
@@ -224,9 +225,10 @@
             this.btn_opcoes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_opcoes.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_opcoes.FlatAppearance.BorderSize = 0;
+            this.btn_opcoes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btn_opcoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_opcoes.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_opcoes.ForeColor = System.Drawing.Color.Red;
+            this.btn_opcoes.ForeColor = System.Drawing.Color.SteelBlue;
             this.btn_opcoes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_opcoes.Location = new System.Drawing.Point(0, 0);
             this.btn_opcoes.Name = "btn_opcoes";
@@ -250,6 +252,7 @@
             // 
             // pctbox_logo_centro
             // 
+            this.pctbox_logo_centro.BackColor = System.Drawing.Color.White;
             this.pctbox_logo_centro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pctbox_logo_centro.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pctbox_logo_centro.Image = ((System.Drawing.Image)(resources.GetObject("pctbox_logo_centro.Image")));

@@ -79,7 +79,7 @@ namespace App_Busca_CEP_Desktop.View.Modules
 
                 // Definindo os nomes das colunas:
 
-                dgv_logradouros_bairro.Columns[0].Name = "Logradouro";
+                dgv_logradouros_bairro.Columns[0].Name = "Logradouros:";
 
                 // Permissões do usuário:
 

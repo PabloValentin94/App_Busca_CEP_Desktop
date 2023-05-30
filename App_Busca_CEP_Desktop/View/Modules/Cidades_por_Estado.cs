@@ -75,7 +75,7 @@ namespace App_Busca_CEP_Desktop.View.Modules
 
                 // Definindo os nomes das colunas:
 
-                dgv_cidades_estado.Columns[0].Name = "Cidade";
+                dgv_cidades_estado.Columns[0].Name = "Cidades:";
 
                 // Permissões do usuário:
 

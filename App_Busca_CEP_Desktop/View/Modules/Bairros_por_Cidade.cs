@@ -83,7 +83,7 @@ namespace App_Busca_CEP_Desktop.View.Modules
 
                 // Definindo os nomes das colunas:
 
-                dgv_bairros_cidade.Columns[0].Name = "Bairro";
+                dgv_bairros_cidade.Columns[0].Name = "Bairros:";
 
                 /*dgv_bairros_cidade.Columns[1].Name = "Cidade";
 

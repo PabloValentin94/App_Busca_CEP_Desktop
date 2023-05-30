@@ -65,7 +65,7 @@ namespace App_Busca_CEP_Desktop.View.Modules
 
                 // Definindo os nomes das colunas:
 
-                dgv_ceps_logradouro.Columns[0].Name = "C.E.P.";
+                dgv_ceps_logradouro.Columns[0].Name = "CEPs:";
 
                 //dgv_ceps_logradouro.Columns[1].Name = "Número";
 
